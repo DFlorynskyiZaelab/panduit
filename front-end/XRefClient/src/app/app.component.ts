@@ -10,4 +10,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'front';
+
+  constructor()
+  {
+    // throw new Error('test error');
+  }
 }
