@@ -10,6 +10,7 @@ import { ErrorService } from './app-core/errors/error.service';
 import { ErrorConsoleService } from './app-core/errors/error-console.service';
 import { ErrorDatabaseService } from './app-core/errors/error-database.service';
 import { GlobalErrorHandler } from './app-core/errors/global-error.handler';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 export const appConfig: ApplicationConfig = {
@@ -17,5 +18,6 @@ export const appConfig: ApplicationConfig = {
     { provide: ErrorService, useClass: environment.production ? ErrorDatabaseService : ErrorConsoleService },
     { provide: ErrorHandler, useClass: GlobalErrorHandler },
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes)]
+    provideRouter(routes),
+    provideAnimationsAsync('noop')]
 };
