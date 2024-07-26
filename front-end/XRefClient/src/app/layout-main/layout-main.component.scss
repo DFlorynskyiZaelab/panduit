@@ -1,0 +1,50 @@
+.layout--container {
+    height: 100vh;
+    /* for shorter content */
+    display: flex;
+    flex-direction: column;
+
+    /*ie10*/
+    display: -ms-flexbox;
+    -ms-flex-direction: column;
+}
+
+.layout--block-body {
+    // background-color: #eee;
+    flex: 1;
+
+    /*ie10*/
+    -ms-flex: 1 1 auto;
+    /*needs both shrink and grow*/
+}
+
+// .layout--block-header,
+.layout--block-footer {
+    // background-color: #ccc;
+
+    //  flex-basis: 50px;   
+    //  -ms-flex-preferred-size: 50px; /*ie10*/
+
+    // /*center align of links*/
+    // display: flex;
+    // align-items: center;
+    // /*vertical*/
+    // justify-content: space-around;
+    // /*or space-between*/
+    // /*ie10*/
+    // display: -ms-flexbox;
+    // -ms-flex-align: center;
+    // /*vertical*/
+    // -ms-flex-line-pack: distribute;
+    // /*or justify*/
+}
+
+.layout--block-footer {
+    /*ie10 short content*/
+    margin-top: auto;
+}
+
+/* fixed header and footer with scrollable main section */
+.fixed-hf .layout--block-body {
+    overflow-y: auto;
+}

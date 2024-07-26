@@ -1,0 +1,49 @@
+<div class="app-main-header">
+    <mat-toolbar class="p--mat-toolbar" color="primary">
+
+        <button mat-icon-button class="p--icon-button-1">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <img class="header-logo-img" src="assets/images/logo.svg" alt="Logo">
+
+        <span class="header-logo-text">
+            Cross Reference <br />
+            Solution
+        </span>
+
+
+        <span class="header-spacer"></span>
+
+        <button mat-icon-button class="p--icon-button-3">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="p--icon-button-3">
+            <mat-icon>info</mat-icon>
+        </button>
+        <button *ngIf="!hasNotifications" mat-icon-button class="p--icon-button-3" >
+            <mat-icon>notifications</mat-icon>
+        </button>
+        <button *ngIf="hasNotifications" mat-icon-button class="p--icon-button-3 notification-active">
+            <mat-icon class="bell-icon" [class.animate]="hasNotifications">notifications_active</mat-icon>
+          </button>
+        <div class="user--block">
+            <span class="user--text" (click)="onNotificationClick()">test&#64;panduit.com</span>
+        </div>
+        
+        <button mat-icon-button class="p--icon-button-2" [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+
+    </mat-toolbar>
+</div>
+
+
+<mat-menu class="p-mat-menu" #menu="matMenu">
+    <a mat-menu-item routerLink="/upload">Manage your Account</a>
+    <!-- <mat-divider></mat-divider> -->
+    <a mat-menu-item routerLink="/upload/result">About Service</a>
+    <a mat-menu-item routerLink="/upload/result" class="menu-item-signout">Sign out</a>
+    <!-- <button mat-menu-item (click)="goToRoute('/upload')">Upload</button>
+    <button mat-menu-item (click)="goToRoute('/upload/result')">Upload Result</button> -->
+</mat-menu>
