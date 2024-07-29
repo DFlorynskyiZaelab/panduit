@@ -1,0 +1,56 @@
+<div class="app-crossref-processing-grid">
+
+    <div class="p--table-container">
+        <table mat-table [dataSource]="gridDataSource" class="p--table" matSort matSortActive="prop1"
+            matSortDisableClear matSortDirection="desc">
+
+            <!-- Checkbox Column -->
+            <ng-container matColumnDef="select">
+                <th class="p--mat-header-cell" mat-header-cell *matHeaderCellDef>
+                    <mat-checkbox class="small-checkbox" (change)="$event ? toggleAllRows() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+                    </mat-checkbox>
+                </th>
+                <td class="p--mat-mdc-cell" mat-cell *matCellDef="let row">
+                    <mat-checkbox class="small-checkbox" (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+            <!-- Number Column -->
+            <ng-container matColumnDef="prop1">
+                <th class="p--mat-header-cell" mat-header-cell *matHeaderCellDef mat-sort-header>Process ID</th>
+                <td class="p--mat-mdc-cell" mat-cell *matCellDef="let row">{{row.prop1}}</td>
+            </ng-container>
+
+            <!-- Title Column -->
+            <ng-container matColumnDef="prop2">
+                <th class="p--mat-header-cell" mat-header-cell *matHeaderCellDef mat-sort-header>Start Date</th>
+                <td class="p--mat-mdc-cell" mat-cell *matCellDef="let row">{{row.prop2}}</td>
+            </ng-container>
+
+            <!-- State Column -->
+            <ng-container matColumnDef="prop3">
+                <th class="p--mat-header-cell" mat-header-cell *matHeaderCellDef mat-sort-header>End Date</th>
+                <td class="p--mat-mdc-cell" mat-cell *matCellDef="let row">{{row.prop3}}</td>
+            </ng-container>
+
+            <!-- State Column -->
+            <ng-container matColumnDef="prop4">
+                <th class="p--mat-header-cell" mat-header-cell *matHeaderCellDef mat-sort-header>Document Name</th>
+                <td class="p--mat-mdc-cell" mat-cell *matCellDef="let row">{{row.prop4}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="gridDisplayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: gridDisplayedColumns;"></tr>
+
+        </table>
+    </div>
+
+    <mat-paginator class="p--mat-mdc-paginator" [length]="gridPageResultsLength" [pageSize]="25"
+        aria-label="Select page of GitHub search results">
+    </mat-paginator>
+
+</div>

@@ -18,14 +18,12 @@
         <button mat-icon-button class="p--icon-button-3">
             <mat-icon>favorite</mat-icon>
         </button>
-        <button mat-icon-button class="p--icon-button-3">
-            <mat-icon>info</mat-icon>
-        </button>
         <button *ngIf="!hasNotifications" mat-icon-button class="p--icon-button-3" >
             <mat-icon>notifications</mat-icon>
         </button>
         <button *ngIf="hasNotifications" mat-icon-button class="p--icon-button-3 notification-active">
             <mat-icon class="bell-icon" [class.animate]="hasNotifications">notifications_active</mat-icon>
+            <span class="badge">{{ notificationCount }}</span>
           </button>
         <div class="user--block">
             <span class="user--text" (click)="onNotificationClick()">test&#64;panduit.com</span>

@@ -7,7 +7,7 @@ export const routes: Routes = [
         children: [
             {
                 path: 'cross-ref/processing',
-                loadComponent: () => import('./module-welcome/module-welcome.component').then(m => m.ModuleWelcomeComponent),
+                loadComponent: () => import('./module-crossref-processing/hub-crossref-processing.component').then(m => m.HubCrossrefProcessingComponent),
             },
         ]
     },

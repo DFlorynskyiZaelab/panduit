@@ -27,6 +27,7 @@ import { MatDividerModule } from '@angular/material/divider';
 })
 
 export class MainHeaderComponent {
+  notificationCount = '11'; // Set this based on your notification logic
   hasNotifications = true; // Set this based on your notification logic
   onNotificationClick() {
     // Handle the click event (e.g., mark notifications as read)

@@ -1,1 +1,44 @@
-<p>hub-crossref-processing!</p>
+<div class="app-hub-crossref-processing">
+    <div class="p--page">
+        <div class="p--page-bread-crumbs">
+            <span class="text--bread-crumbs">
+                <span class="text--bread-crumbs-item">Home</span> /
+                <span class="text--bread-crumbs-item">Cross Reference</span> /
+                <span>Upload processing</span>
+            </span>
+        </div>
+        <div class="p--page-title">
+            <p class="title-text p--heading-3 color-text--blue">File upload processing</p>
+            <p class="title-text p--paragraph-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices massa at eros ornare varius.
+                <br />
+                Morbi ac elit velit. Curabitur ultrices cursus metus, vel lobortis magna sollicitudin vel.
+            </p>
+        </div>
+
+        <div class="p--page-body">
+
+            <div class="body--control-panel">
+
+                <button class="p--upload-btn" (click)="openDialog()" mat-raised-button extended>
+                    <mat-icon>publish</mat-icon>
+                    Upload new document
+                  </button>
+
+                <span class="spacer"></span>
+
+                <!-- <span class="test">table will be updated in 1 minute.</span> -->
+                <button mat-icon-button  class="p--icon-button-3">
+                    <mat-icon>sync</mat-icon>
+                </button>
+                <button mat-icon-button matTooltip="The table contains active values. &#13; To display current data it is updated every 5 minutes. Or you can update it manually." class="p--icon-button-3">
+                    <mat-icon>info</mat-icon>
+                </button>                
+            </div>
+
+            <div class="body--grid">
+                <app-crossref-processing-grid></app-crossref-processing-grid>
+            </div>
+        </div>
+    </div>
+</div>

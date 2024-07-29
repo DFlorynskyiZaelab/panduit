@@ -18,7 +18,11 @@
     /*needs both shrink and grow*/
 }
 
-// .layout--block-header,
+
+.layout--block-header {
+    border-top: 5px solid #017698;
+}
+
 .layout--block-footer {
     // background-color: #ccc;
 

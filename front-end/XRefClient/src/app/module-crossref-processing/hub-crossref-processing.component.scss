@@ -1,0 +1,95 @@
+@import '../../styles-colors.scss';
+
+.app-hub-crossref-processing {
+    // background-color: red;
+    height: 100%;
+
+
+    .p--page {
+        .p--page-bread-crumbs {
+            background-color: #ffffff;
+            padding: 5px 25px;
+
+            .text--bread-crumbs {
+                font-size: 12px;
+            }
+
+            .text--bread-crumbs-item {
+                color: $color-text--blue;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .p--page-title {
+            background-color: #ffffff;
+            padding: 15px 25px 20px 25px;
+            box-shadow: 0px 3px 1px -1px rgba(0, 0, 0, 0.05), 0px 1px 1px 0px rgba(0, 0, 0, 0.05), 0px 1px 3px 0px rgba(0, 0, 0, 0.001);
+        }
+
+        .p--page-body {
+            padding: 5px 25px;
+
+            .body--control-panel {
+                // height: 70px;
+                display: flex;
+                padding-bottom: 10px;
+                padding-top: 10px;
+                border-bottom: 1px solid #F5F5F7;
+                // background-color: red;
+            }
+        }
+    }
+
+
+    .p--icon-button-3 {
+        width: 34px;
+        height: 34px;
+        padding: 9px 5px;
+        margin-right: 5px;
+        color: $color-icon-interactive--lightblue;
+
+        mat-icon {
+            font-size: 18px;
+            height: 24px;
+            width: 24px;
+        }
+    }
+
+
+    .test {
+        display: flex;
+        align-items: center;
+        /*vertical*/
+        justify-content: space-around;
+        /*or space-between*/
+        /*ie10*/
+        display: -ms-flexbox;
+        -ms-flex-align: center;
+        /*vertical*/
+        -ms-flex-line-pack: distribute;
+        font-size: 12px;
+        color: #878787;
+        padding-right: 5px;
+    }
+
+    .p--upload-btn {
+        border-radius: 8px;
+        height: 32px;
+        color: #0c6781;
+        font-size: 12px;
+        padding: 0 16px;
+    }
+}
+
+
+.color-text--blue {
+    color: $color-text--blue;
+}
+
+
+.spacer {
+    flex: 1 1 auto;
+}
