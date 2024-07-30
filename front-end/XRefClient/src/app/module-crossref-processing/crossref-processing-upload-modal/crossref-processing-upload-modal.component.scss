@@ -1,0 +1,86 @@
+@import '../../../styles-colors.scss';
+@import '../../../styles-text.scss';
+
+.app-crossref-processing-upload-modal {
+    width: 480px;
+
+    .p--dialog-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 24px 13px 24px;
+        position: relative;
+
+        .mat-mdc-dialog-title {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "Museo-Sans-Cyrl-500";
+            color: #595959;
+        }
+    }
+
+    .p--dialog-body {
+        height: 200px;
+        padding: 16px 24px 20px 24px;;
+    }
+
+    .p--icon-button-3 {
+        width: 34px;
+        height: 34px;
+        padding: 9px 5px;
+        margin-right: 5px;
+        position: absolute;
+        right: 9px;
+        top: 24px;
+
+        mat-icon {
+            font-size: 18px;
+            height: 24px;
+            width: 24px;
+        }
+    }
+
+    .c--download-block {
+        position: relative;
+        background-color: #F3F5F7;
+        padding: 7px 15px 2px 15px;
+        border-radius: 6px;
+
+        .c--download-p1 {
+            font-size: 12px;
+            font-weight: 500;
+            color: #595959;
+            padding-left: 28px;
+            padding-top: 4px;
+        }
+
+        .c--download-p2 {
+            font-weight: 500;
+            color: #999999;
+            font-family: "Museo-Sans-Cyrl-500", "Helvetica Neue", sans-serif;
+            font-size: 11px;
+            line-height: 15px;
+            padding-top: 5px;
+            letter-spacing: 0.0001em;
+        }
+
+        .c--download-btn {
+            position: absolute;
+            border-radius: 7px;
+            height: 30px;
+            color: #595959;
+            font-size: 11px;
+            padding: 0 14px;
+            top: 25px;
+            right: 17px;
+        }
+
+        .c--download-img {
+            height: 16px;
+            position: absolute;
+            top: 12px;
+        }
+
+    }
+    
+}

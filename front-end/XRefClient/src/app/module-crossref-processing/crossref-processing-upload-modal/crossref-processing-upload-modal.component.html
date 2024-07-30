@@ -1,17 +1,39 @@
 <div class="app-crossref-processing-upload-modal">
 
-    <h2 mat-dialog-title>Upload new document</h2>
+    <div class="p--dialog-header">
+        <span mat-dialog-title>
+            Upload new document
+        </span>
+        <button class="p--icon-button-3" mat-icon-button (click)="onClose()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
 
-    <mat-dialog-content class="mat-typography p--dialog">
-        <h3>Develop across all platforms</h3>
-        <p>Learn one way to build applications with Angular and reuse your code and abilities to build
-            apps for any deployment target. For web, mobile web, native mobile and native desktop.</p>
+    <mat-dialog-content class="mat-typography p--dialog-body">
+
+        <div class="c--download-block">
+            <div class="c--download-p1">Table Example</div>
+            <div>
+                <p class="c--download-p2">
+                    You can download the attached example and use <br />
+                    them as a starting point for your own file
+                </p>
+            </div>
+            <button class="c--download-btn" (click)="downloadFile()" mat-raised-button extended>
+                Download
+            </button>
+            <img class="c--download-img" src="assets/images/excel.svg">
+        </div>
+
+        <div class="C--upload-block">
+           
+        </div>
 
     </mat-dialog-content>
 
     <mat-dialog-actions align="end">
         <button mat-button mat-dialog-close>Cancel</button>
-        <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Next</button>
     </mat-dialog-actions>
 
 </div>

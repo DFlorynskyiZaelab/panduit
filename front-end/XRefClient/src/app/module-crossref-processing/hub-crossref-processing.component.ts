@@ -4,7 +4,7 @@ import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule, MatDialogConfig } from '@angular/material/dialog';
 
 // cmp
 import { CrossrefProcessingGridComponent } from './crossref-processing-grid/crossref-processing-grid.component';
@@ -31,7 +31,10 @@ export class HubCrossrefProcessingComponent {
   readonly dialog = inject(MatDialog);
 
   openDialog() {
-    const dialogRef = this.dialog.open(CrossrefProcessingUploadModalComponent);
+    const dialogRef = this.dialog.open(
+      CrossrefProcessingUploadModalComponent,
+      { panelClass: 'p--mat-mdc-dialog-panel' }
+    );
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

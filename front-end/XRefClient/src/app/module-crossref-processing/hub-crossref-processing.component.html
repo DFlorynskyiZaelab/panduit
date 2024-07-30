@@ -8,7 +8,7 @@
             </span>
         </div>
         <div class="p--page-title">
-            <p class="title-text p--heading-3 color-text--blue">File upload processing</p>
+            <p class="title-text p--heading-3 c--page-title-p1">File upload processing</p>
             <p class="title-text p--paragraph-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices massa at eros ornare varius.
                 <br />
@@ -23,17 +23,19 @@
                 <button class="p--upload-btn" (click)="openDialog()" mat-raised-button extended>
                     <mat-icon>publish</mat-icon>
                     Upload new document
-                  </button>
+                </button>
 
                 <span class="spacer"></span>
 
                 <!-- <span class="test">table will be updated in 1 minute.</span> -->
-                <button mat-icon-button  class="p--icon-button-3">
+                <button mat-icon-button matTooltip="refresh table" class="p--icon-button-3">
                     <mat-icon>sync</mat-icon>
                 </button>
-                <button mat-icon-button matTooltip="The table contains active values. &#13; To display current data it is updated every 5 minutes. Or you can update it manually." class="p--icon-button-3">
+                <button mat-icon-button
+                    matTooltip="The table contains active values. &#13; To display current data it is updated every 5 minutes. Or you can update it manually."
+                    class="p--icon-button-3">
                     <mat-icon>info</mat-icon>
-                </button>                
+                </button>
             </div>
 
             <div class="body--grid">
