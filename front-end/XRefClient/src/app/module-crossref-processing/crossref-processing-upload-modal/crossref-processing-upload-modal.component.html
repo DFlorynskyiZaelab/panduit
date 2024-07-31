@@ -1,9 +1,7 @@
 <div class="app-crossref-processing-upload-modal">
 
     <div class="p--dialog-header">
-        <span mat-dialog-title>
-            Upload new document
-        </span>
+        <span mat-dialog-title>Upload new document</span>
         <button class="p--icon-button-3" mat-icon-button (click)="onClose()">
             <mat-icon>close</mat-icon>
         </button>
@@ -11,29 +9,91 @@
 
     <mat-dialog-content class="mat-typography p--dialog-body">
 
-        <div class="c--download-block">
-            <div class="c--download-p1">Table Example</div>
-            <div>
+
+
+
+
+        <mat-vertical-stepper class="c--stepper" fxLayout="column" [linear]="false" #stepper>
+            <mat-step completed="false">
+                <ng-template matStepLabel>Please upload your file to begin the process.</ng-template>                
+                <ng-container *ngTemplateOutlet="templateStep1"></ng-container>
+                <div class="c--stepper-btn-container">
+                    <button class="c--stepper-btn" mat-flat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step completed="false">
+                <ng-template matStepLabel>Validate your file to ensure it meets the required criteria.</ng-template>                
+                <div class="temp">
+                    <span>This logic is in the process of development</span>
+                </div>
+                <div class="c--stepper-btn-container">
+                    <button class="c--stepper-btn" mat-flat-button matStepperPrevious>Back</button>
+                    <button class="c--stepper-btn" mat-flat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            
+
+            <mat-step completed="false">
+                <ng-template matStepLabel>Carefully review your file to finalize the process.</ng-template>
+                <div class="temp">
+                    <span>This logic is in the process of development</span>
+                </div>
+                <div class="c--stepper-btn-container">
+                    <button class="c--stepper-btn" mat-button matStepperPrevious>Back</button>
+                    <button class="c--stepper-btn" mat-button (click)="stepper.reset()">Run process</button>
+                </div>
+            </mat-step>
+            
+        </mat-vertical-stepper>
+
+        <ng-template #templateStep1 completed="false">
+            <div class="c--upload-block">
+                <div class="c--file-upload">
+                    <mat-card>
+                        <div class="c--drop-zone" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+                            <input type="file" accept=".xls,.xlsx" (change)="onFileSelected($event)" #fileInput
+                                hidden />
+                            <img class="c--upload-img" src="assets/images/cloud-upload-blue.svg">
+                            <p class="c--drop-zone-p1">
+                                Drag and Drop file here or <a (click)="fileInput.click()"
+                                    class="c--drop-zone-p1-link">Choose file</a>
+                            </p>
+                            <p class="c--drop-zone-p2">Supported format: XLS, SLSX</p>
+                        </div>
+
+                    </mat-card>
+                </div>
+            </div>
+
+            <div *ngIf="!file" class="c--download-block">
+                <div class="c--download-p1">Table Example</div>
+
                 <p class="c--download-p2">
                     You can download the attached example and use <br />
                     them as a starting point for your own file
                 </p>
-            </div>
-            <button class="c--download-btn" (click)="downloadFile()" mat-raised-button extended>
-                Download
-            </button>
-            <img class="c--download-img" src="assets/images/excel.svg">
-        </div>
 
-        <div class="C--upload-block">
-           
-        </div>
+                <button class="c--download-btn" (click)="downloadFile()" mat-raised-button extended>
+                    Download
+                </button>
+                <img class="c--download-img" src="assets/images/excel.svg">
+            </div>
+
+            <div *ngIf="file" class="c--upload-process">
+                <div class="c--upload-process-file">{{ file?.name }}</div>
+                <div class="c--upload-process-size">File size: 3 MB</div>
+                <mat-progress-bar class="c--upload-process-bar" mode="determinate" value="40"></mat-progress-bar>
+                <img class="c--upload-process-img" src="assets/images/excel.svg">
+                <button class="p--btn-upload-process-cancel" (click)="removeFile()" mat-icon-button>
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </ng-template>
 
     </mat-dialog-content>
 
     <mat-dialog-actions align="end">
-        <button mat-button mat-dialog-close>Cancel</button>
-        <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Next</button>
+        <!-- <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Next</button> -->
     </mat-dialog-actions>
-
 </div>

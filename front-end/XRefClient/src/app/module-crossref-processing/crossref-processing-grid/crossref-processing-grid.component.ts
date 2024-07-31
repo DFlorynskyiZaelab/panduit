@@ -34,7 +34,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 
 export class CrossrefProcessingGridComponent {
   gridDataSource = new MatTableDataSource<any>();
-  gridDisplayedColumns: string[] = ['prop1', 'prop2', 'prop3', 'prop4'];
+  gridDisplayedColumns: string[] = ['select', 'prop1', 'prop2', 'prop3', 'prop4'];
   gridData: any[] = [];
   gridIsLoading = false;
   gridPageResultsLength = 0;

@@ -74,7 +74,10 @@
         color: $color-text--black-2;
     }
 }
-
+::ng-deep .small-checkbox2 {
+    transform: scale(0.75);
+    height: 33px;
+}
 
 
 ::ng-deep .small-checkbox .mdc-checkbox {

@@ -7,13 +7,13 @@
             <!-- Checkbox Column -->
             <ng-container matColumnDef="select">
                 <th class="p--mat-header-cell" mat-header-cell *matHeaderCellDef>
-                    <mat-checkbox class="small-checkbox" (change)="$event ? toggleAllRows() : null"
+                    <mat-checkbox class="small-checkbox2" (change)="$event ? toggleAllRows() : null"
                         [checked]="selection.hasValue() && isAllSelected()"
                         [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
                     </mat-checkbox>
                 </th>
                 <td class="p--mat-mdc-cell" mat-cell *matCellDef="let row">
-                    <mat-checkbox class="small-checkbox" (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+                    <mat-checkbox class="small-checkbox2" (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
                         [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
                     </mat-checkbox>
                 </td>
